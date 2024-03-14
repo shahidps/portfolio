@@ -28,6 +28,9 @@ body::before {
   z-index: -1;
 }
 
+.resume1 {
+  border: 1px solid white;
+}
 @media (min-width: 1024px) {
   body::before {
     background-attachment: fixed;
