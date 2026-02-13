@@ -32,10 +32,13 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
+  <!-- Mobile Responsive CSS -->
+  <link href="assets/css/mobile.css" rel="stylesheet">
 
   <style>
     .nav-menu ul li a {
-      background: rgba(255, 255, 255, 0.05) !important;
+      background: rgba(7, 6, 6, 0.05) !important;
       backdrop-filter: blur(10px) !important;
       border: 1px solid rgba(255, 255, 255, 0.1) !important;
       padding: 8px 20px !important;
@@ -233,6 +236,16 @@
       background: linear-gradient(135deg, #4a4a4a, #1a1a1a) !important;
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 12px 30px rgba(0, 0, 0, 0.7) !important;
       transform: translateY(-2px) !important;
+    }
+    
+    /* Remove black overlay from sections */
+    section .container {
+      background: none !important;
+    }
+    
+    /* Fix mobile top bar black overlay */
+    #header.header-top {
+      background: transparent !important;
     }
   </style>
 

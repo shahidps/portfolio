@@ -219,7 +219,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 15px;
   z-index: 9999;
   overflow-y: auto;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.95);
   transition: ease-in-out 0.2s;
   opacity: 0;
   visibility: hidden;
@@ -281,7 +281,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   top: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: transparent;
 }
 
 #header.header-top .social-links, #header.header-top h2 {
@@ -334,7 +334,7 @@ section.section-show {
 }
 
 section .container {
-  background: rgba(0, 0, 0, 0.9);
+  background: none;
   padding: 30px;
 }
 
@@ -874,7 +874,7 @@ section .container {
 
 .portfolio .portfolio-wrap::before {
   content: "";
-  background: linear-gradient(135deg, rgba(67, 67, 67, 0.9), rgba(0, 0, 0, 0.9));
+  background: transparent;
   position: absolute;
   left: 30px;
   right: 30px;
@@ -1288,7 +1288,7 @@ section .container {
 --------------------------------------------------------------*/
 .portfolio-details {
   padding-top: 40px;
-  background: rgba(0, 0, 0, 0.8);
+  background: transparent;
   position: fixed;
   left: 0;
   right: 0;
@@ -1376,7 +1376,7 @@ section .container {
   .credits {
     text-align: center;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
+    background: transparent;
   }
 }
 
