@@ -33,6 +33,209 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+    .nav-menu ul li a {
+      background: rgba(255, 255, 255, 0.05) !important;
+      backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      padding: 8px 20px !important;
+      border-radius: 20px !important;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    
+    .nav-menu ul li a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .nav-menu ul li a:hover::before {
+      opacity: 1;
+    }
+    
+    .nav-menu ul li.active a,
+    .nav-menu ul li a:hover {
+      background: linear-gradient(135deg, rgba(79, 172, 254, 0.3), rgba(0, 242, 254, 0.3)) !important;
+      border-color: rgba(79, 172, 254, 0.5) !important;
+      box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4) !important;
+      transform: translateY(-3px) scale(1.05) !important;
+    }
+    
+    #header .social-links a {
+      width: 45px !important;
+      height: 45px !important;
+      backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    
+    #header .social-links a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    #header .social-links a:hover::before {
+      opacity: 1;
+    }
+    
+    #header .social-links a.email {
+      background: linear-gradient(135deg, rgba(234, 67, 53, 0.2), rgba(251, 188, 5, 0.2)) !important;
+      border-color: rgba(234, 67, 53, 0.4) !important;
+    }
+    
+    #header .social-links a.email:hover {
+      background: linear-gradient(135deg, rgba(234, 67, 53, 0.4), rgba(251, 188, 5, 0.4)) !important;
+      border-color: rgba(234, 67, 53, 0.6) !important;
+      box-shadow: 0 12px 40px rgba(234, 67, 53, 0.5) !important;
+      transform: translateY(-5px) scale(1.1) !important;
+    }
+    
+    #header .social-links a.whatsapp {
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.2), rgba(18, 140, 126, 0.2)) !important;
+      border-color: rgba(37, 211, 102, 0.4) !important;
+    }
+    
+    #header .social-links a.whatsapp:hover {
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.4), rgba(18, 140, 126, 0.4)) !important;
+      border-color: rgba(37, 211, 102, 0.6) !important;
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5) !important;
+      transform: translateY(-5px) scale(1.1) !important;
+    }
+    
+    #header .social-links a.linkedin {
+      background: linear-gradient(135deg, rgba(10, 102, 194, 0.2), rgba(0, 119, 181, 0.2)) !important;
+      border-color: rgba(10, 102, 194, 0.4) !important;
+    }
+    
+    #header .social-links a.linkedin:hover {
+      background: linear-gradient(135deg, rgba(10, 102, 194, 0.4), rgba(0, 119, 181, 0.4)) !important;
+      border-color: rgba(10, 102, 194, 0.6) !important;
+      box-shadow: 0 12px 40px rgba(10, 102, 194, 0.5) !important;
+      transform: translateY(-5px) scale(1.1) !important;
+    }
+    
+    #header .social-links a.facebook {
+      background: linear-gradient(135deg, rgba(24, 119, 242, 0.2), rgba(66, 103, 178, 0.2)) !important;
+      border-color: rgba(24, 119, 242, 0.4) !important;
+    }
+    
+    #header .social-links a.facebook:hover {
+      background: linear-gradient(135deg, rgba(24, 119, 242, 0.4), rgba(66, 103, 178, 0.4)) !important;
+      border-color: rgba(24, 119, 242, 0.6) !important;
+      box-shadow: 0 12px 40px rgba(24, 119, 242, 0.5) !important;
+      transform: translateY(-5px) scale(1.1) !important;
+    }
+    
+    #header .social-links a.instagram {
+      background: linear-gradient(135deg, rgba(225, 48, 108, 0.2), rgba(193, 53, 132, 0.2), rgba(131, 58, 180, 0.2)) !important;
+      border-color: rgba(225, 48, 108, 0.4) !important;
+    }
+    
+    #header .social-links a.instagram:hover {
+      background: linear-gradient(135deg, rgba(225, 48, 108, 0.4), rgba(193, 53, 132, 0.4), rgba(131, 58, 180, 0.4)) !important;
+      border-color: rgba(225, 48, 108, 0.6) !important;
+      box-shadow: 0 12px 40px rgba(225, 48, 108, 0.5) !important;
+      transform: translateY(-5px) scale(1.1) !important;
+    }
+    
+    #header .social-links a i {
+      font-size: 18px !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    #header .social-links a:hover i {
+      transform: rotate(360deg) !important;
+    }
+    
+    .skills .progress {
+      background: rgba(255, 255, 255, 0.05) !important;
+      backdrop-filter: blur(15px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 15px !important;
+      padding: 15px !important;
+      margin-bottom: 25px !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .skills .progress:hover {
+      border-color: rgba(79, 172, 254, 0.4) !important;
+      box-shadow: 0 12px 40px rgba(79, 172, 254, 0.3) !important;
+      transform: translateY(-3px) !important;
+    }
+    
+    .skills .progress-bar-wrap {
+      background: rgba(255, 255, 255, 0.08) !important;
+      backdrop-filter: blur(10px) !important;
+      border-radius: 10px !important;
+      overflow: hidden !important;
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    .skills .progress-bar {
+      background: linear-gradient(90deg, #4facfe, #00f2fe) !important;
+      box-shadow: 0 0 20px rgba(79, 172, 254, 0.6) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    
+    .skills .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .resume1 .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .resume1 .btn:hover::before {
+      left: 100%;
+    }
+    
+    .resume1 .btn:hover {
+      background: linear-gradient(135deg, #4a4a4a, #1a1a1a) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 12px 30px rgba(0, 0, 0, 0.7) !important;
+      transform: translateY(-2px) !important;
+    }
+  </style>
+
   <!-- =======================================================
   * Template Name: Personal - v2.5.1
   * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
@@ -96,10 +299,10 @@
 
       <div class="row">
         <div class="col-lg-4" data-aos="fade-right">
-          <img src="assets/img/mee.png" class="img-fluid" alt="">
+          <img src="assets/img/mee.png" class="img-fluid" alt="" style="filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>QUALITY &amp; CYBER SECURITY ANALYST</h3>
+          <h3 style="background: linear-gradient(135deg, #4facfe, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 32px; font-weight: 800; letter-spacing: 2px; text-shadow: 0 0 30px rgba(79, 172, 254, 0.5); position: relative; display: inline-block;">QUALITY &amp; CYBER SECURITY ANALYST</h3>
           <p class="font-italic">
             Whats'up, Dear Reader.
           </p>
@@ -146,7 +349,6 @@
 
         <div class="col-lg-6 col-md-6">
           <div class="count-box">
-            <i class="icofont-simple-smile"></i>
             <span data-toggle="counter-up">20</span>
             <p>Happy Clients</p>
           </div>
@@ -154,8 +356,7 @@
 
         <div class="col-lg-6 col-md-6 mt-5 mt-md-0">
           <div class="count-box">
-            <i class="icofont-document-folder"></i>
-            <span data-toggle="counter-up">35</span>
+            <span data-toggle="counter-up">33</span>
             <p>Projects</p>
           </div>
         </div>
@@ -454,28 +655,23 @@
   <!-- ======= Resume Section ======= -->
   
   <section id="resume" class="resume">
-    <div class="container resume1">
+    <div class="container resume1" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.05), rgba(0, 242, 254, 0.05)) !important; border: 1px solid rgba(79, 172, 254, 0.2) !important; border-radius: 20px !important; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;">
     <!-- <div class="resume1"> -->
       <div class="section-title">
 
         
-        <p class="text-center mt-3"><u>CHECK MY RESUME</u></p>
-        <div class="row">
-          <div class="col-lg-10 col-7">
-          </div>
-          <div class="col-lg-2 col-5">
-            <a href="resume/SHAHID CV.pdf" class="btn btn-success" target="_blank">DOWNLOAD RESUME</a>
-          </div>
+        <p class="text-center mt-3" style="background: linear-gradient(135deg, #4facfe, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 28px; font-weight: 700; letter-spacing: 1px;"><u>CHECK MY CV</u></p>
+        <div class="text-center mt-4">
+          <a href="resume/SHAHID CV.pdf" class="btn" target="_blank" style="background: #000000 !important; border: 2px solid #8B0000 !important; color: #fff !important; font-weight: 600 !important; padding: 10px 20px !important; border-radius: 25px !important; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important; transition: all 0.3s ease !important; position: relative !important; overflow: hidden !important; display: inline-block !important;">DOWNLOAD CV</a>
         </div>
       </div>
 
       <div class="row mt-5">
         <div class="col-lg-6">
-          <h3 class="resume-title "><u>SUMMARY</u></h3>
+          <h3 class="resume-title" style="background: linear-gradient(135deg, #4facfe, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;"><u>SUMMARY</u></h3>
           <div class="resume-item pb-0 mt-5">
             <h4>MUHAMMED SHAHID P S</h4>
-            <p><em>Myself Muhammed Shahid P S. Iam Currently Working as a Quality & Cyber Security Analyst in A4
-                Mercantiles Pvt Ltd, ERNAKULAM. Overall 4 years experience in this field. I have Good leadership skills
+            <p><em>Myself Muhammed Shahid P S. Iam Currently Working as a Quality & Cyber Security Analyst in Aakri Impact Pvt Ltd, ERNAKULAM. Overall 5 years experience in this field. I have Good leadership skills
                 and curious to learn about the new arena.</em></p>
             <p>
             <ul>
@@ -486,7 +682,7 @@
             </p>
           </div>
 
-          <h3 class="resume-title"><u> EDUCATION </u></h3>
+          <h3 class="resume-title" style="background: linear-gradient(135deg, #4facfe, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;"><u> EDUCATION </u></h3>
           <div class="resume-item mt-5">
             <h4>NETWORK SECURITY (CCNP)</h4>
             <h5>2019</h5>
@@ -520,22 +716,22 @@
           </div>
           <!-- </div> -->
 
-          <h3 class="resume-title"><u> PROFESSIONAL EXPERIENCE </u> </h3>
+          <h3 class="resume-title" style="background: linear-gradient(135deg, #4facfe, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;"><u> PROFESSIONAL EXPERIENCE </u> </h3>
 
           <div class="resume-item mt-5">
-            <h4>QUALITY & CYBER SECURITY ANALYST (WEB / APP)</h4>
+            <h4>SENIOR QUALITY & CYBER SECURITY ANALYST ( IT MANAGER )</h4>
             <h5>01/03/2022 - Present</h5>
-            <p><em>A4 MERCANTILES PVT LTD , ERNAKULAM </em></p>
+            <p><em>AAKRI IMPACT PVT LTD , ERNAKULAM </em></p>
             <p>
             <ul>
-              <li>Developed the test plan for Applications and websites.</li>
-              <li>Research new threats and attacker techniques.</li>
-              <li>Executed system, User Acceptance, and other types of testing for projects.</li>
-              <li>Generate regular reports, threats, and status dashboards.</li>
-              <li>Managed daily testing, bug tracking, and resolution progress reporting.</li>
-              <li>Monitoring network activity to find weak areas.</li>
-              <li>Responding to data breaches and security threats.</li>
-              <li>Maintained test results and output for future reference.</li>
+              <li>Managed end-to-end IT operations and system performance.</li>
+              <li>Coordinated with development, support, and accounts teams to resolve technical issues.</li>
+              <li>Developed and executed test plans for web and mobile applications.</li>
+              <li>Conducted system and User Acceptance Testing (UAT).</li>
+              <li>Monitored network activity and identified security vulnerabilities.</li>
+              <li>Researched emerging threats and attacker techniques.</li>
+              <li>Managed bug tracking and testing progress reporting.</li>
+              <li>Generated regular reports, threat analyses, and status dashboards.</li>
             </ul>
             </p>
           </div>
@@ -543,7 +739,7 @@
         <div class="col-lg-6">
           <!-- <h3 class="resume-title">Professional Experience</h3> -->
           <div class="resume-item">
-            <h4>QUALITY ANALYST</h4>
+            <h4>JUNIOR QUALITY & CYBER SECURITY ANALYST</h4>
             <h5>02/09/2019 - 31/01/2022</h5>
             <p><em>SERVILLE TECHNOLOGIES , ERNAKULAM </em></p>
             <p>
@@ -576,9 +772,9 @@
             </p>
           </div>
 
-          <h3 class="resume-title"><u> DECLARATION  </u> </h3>
+          <h3 class="resume-title" style="background: linear-gradient(135deg, #4facfe, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;"><u> DECLARATION  </u> </h3>
           <p>  I, Muhammed Shahid p s, declare that the above information is true and correct to the best of my knowledge and nothing has been concealed or distorted.     </p>
-          <p class="float-right text-success"><b> MUHAMMED SHAHID P S</b></p>
+          <p class="float-right" style="background: linear-gradient(135deg, #4facfe, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;"><b> MUHAMMED SHAHID P S</b></p>
         </div>
       </div>
       </div>
@@ -712,58 +908,12 @@
           </a>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <a href="https://play.google.com/store/apps/details?id=joboysoftwaredesign.com.joboyuae" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/uae.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>JOBOY UAE</h4>
-                <p>App</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <a href="https://play.google.com/store/apps/details?id=serville.com.deldesire" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/deldesire.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Deldesire</h4>
-                <p>App</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
-
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <a href="https://joboy.in/" target="_blank">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/joboy.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>JOBOY</h4>
-                <p>Web</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div> -->
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <a href="https://joboy.ae/" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/uae.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>JOBOY UAE</h4>
                 <p>Web</p>
                 <!-- <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
@@ -788,22 +938,6 @@
             </div>
           </a>
         </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <a href="https://worcoft.com/" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/worcoft.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>WORCOFT</h4>
-                <p>Web</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
-
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <a href="https://www.campper.com/" target="_blank">
             <div class="portfolio-wrap">
@@ -819,23 +953,9 @@
           </a>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <a href="http://www.travelngo.in/" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/travel.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>TRAVELNGO</h4>
-                <p>Web</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <a href="https://crfreightsystems.com/" target="_blank">
+          <a href="https://crfreightsystems.com" target="_blank">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/roro.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -864,50 +984,6 @@
           </a>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <a href="https://enextglobal.com/" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/enext.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>ENEXT GLOBAL</h4>
-                <p>Web</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <a href="https://amore.care/" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/amore.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>AMORE CARE</h4>
-                <p>Web</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <a href="https://iandlearn.com/" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/iandlearn.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>I AND LEARN</h4>
-                <p>Web</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <a href="https://www.smilehandyy.com/" target="_blank">
@@ -924,20 +1000,6 @@
           </a>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <a href="http://deldesire.com/" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/deldesire.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>DELDESIRE</h4>
-                <p>Web</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <a href="https://claritybrewcoaching.com/" target="_blank">
@@ -949,37 +1011,6 @@
                 <!-- <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <a href="<div class=" col-lg-4 col-md-6 portfolio-item filter-web">
-            <a href="https://zenithgroup.me/" target="_blank">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/zenith.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>ZENITH</h4>
-                  <p>Web</p>
-                  <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <a href="https://play.google.com/store/apps/details?id=com.serville.GoKey" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/gokey.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>GOKEY</h4>
-                <p>App</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div> -->
               </div>
             </div>
           </a>
@@ -1029,67 +1060,7 @@
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <a href="https://play.google.com/store/apps/details?id=com.kyaab.Kyaab" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/kyaab.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Kyaab</h4>
-                <p>App</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <a href="https://play.google.com/store/apps/details?id=com.enext.enextapp" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/enext.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Enext Global</h4>
-                <p>App</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <a href="https://play.google.com/store/apps/details?id=com.almisk.ecommerce" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/almisk.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Al misk Boutique</h4>
-                <p>App</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <a href="https://play.google.com/store/apps/details?id=com.app.iandlearn" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/iandlearn.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>I and Learn</h4>
-                <p>App</p>
-                <!-- <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <!-- <a href="https://play.google.com/store/apps/details?id=com.app.iandlearn" target="_blank"> -->
+          <a href="https://play.google.com/store/apps/details?id=com.app.charteringroro&hl=en_IN" target="_blank">
           <div class="portfolio-wrap">
             <img src="assets/img/portfolio/roro.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
@@ -1118,20 +1089,7 @@
           </a>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <a href="https://play.google.com/store/apps/details?id=com.dreamak.tech" target="_blank">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/dreamak.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Dreamak</h4>
-                <p>App</p>
-                <!-- <div class="portfolio-links"> -->
-                <!-- <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a> -->
-                <!-- <a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-              </div>
-            </div>
-          </a>
-        </div>
+
       </div>
 
 
@@ -1237,19 +1195,27 @@
         </div>
       </div>
 
-      <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+      <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4" style="position: relative;">
+        <!-- Toast Notification -->
+        <div id="toastNotification" style="display: none; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); z-index: 1000; background: linear-gradient(135deg, #434343, #000000); border: 2px solid rgba(192, 192, 192, 0.3); border-radius: 10px; padding: 15px 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); animation: slideIn 0.3s ease;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <span style="font-size: 24px;">⚠️</span>
+            <span style="color: #ccc; font-size: 14px; white-space: nowrap;">Please fill in all fields!</span>
+          </div>
+        </div>
+
         <div class="form-row">
           <div class="col-md-6 form-group">
-            <input id="name" type="text" name="name" class="form-control" id="name" placeholder="YOUR NAME" />
+            <input id="name" type="text" name="name" class="form-control" placeholder="YOUR NAME" />
             <div class="validate"></div>
           </div>
           <div class="col-md-6 form-group">
-            <input id="email" type="email" class="form-control" name="email" id="email" placeholder="YOUR EMAIL" />
+            <input id="email" type="email" class="form-control" name="email" placeholder="YOUR EMAIL" />
             <div class="validate"></div>
           </div>
         </div>
         <div class="form-group">
-          <input id="subject" type="text" class="form-control" name="subject" id="subject" placeholder="SUBJECT" />
+          <input id="subject" type="text" class="form-control" name="subject" placeholder="SUBJECT" />
           <div class="validate"></div>
         </div>
         <div class="form-group">
@@ -1257,24 +1223,93 @@
           <div class="validate"></div>
         </div>
 
-        <div class="text-center"><button type="submit" onclick="send()">SEND MESSAGE</button></div>
-        <a href="https://wa.me/+919061337743?text=Hi" style="text-decoration: none;" target="_blank">
-        </a>
-
-        <script>
-          function send() {
-            //alert('ok');
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var subject = document.getElementById("subject").value;
-            var message = document.getElementById("message").value;
-
-            if (name != '' && email != '' && subject != '' && message != '') {
-              window.location.href = 'https://wa.me/+919061337743?text=Name: ' + name + ' || Email: ' + email + ' || Subject: ' + subject + ' || Message: ' + message;
-            }
-          }
-        </script>
+        <div class="text-center"><button type="button" onclick="send()">SEND MESSAGE</button></div>
       </form>
+
+      <!-- Custom Modal -->
+      <div id="customModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px);">
+        <div style="position: relative; margin: 10% auto; padding: 0; width: 90%; max-width: 500px; background: linear-gradient(135deg, #434343 0%, #000000 100%); border: 2px solid rgba(192, 192, 192, 0.3); border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8); animation: slideDown 0.3s ease;">
+          <div style="padding: 30px; text-align: center;">
+            <h2 style="background: linear-gradient(135deg, #4facfe, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 28px; font-weight: 700; margin-bottom: 20px;">Message Preview</h2>
+            <div id="modalContent" style="text-align: left; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 10px; margin-bottom: 20px;"></div>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+              <button onclick="confirmSend()" style="background: linear-gradient(135deg, #4facfe, #00f2fe); border: none; color: #fff; padding: 12px 30px; border-radius: 25px; font-weight: 600; cursor: pointer; box-shadow: 0 5px 20px rgba(79, 172, 254, 0.4); transition: all 0.3s;">Confirm & Send</button>
+              <button onclick="closeModal()" style="background: linear-gradient(135deg, #ff4b4b, #ff0000); border: none; color: #fff; padding: 12px 30px; border-radius: 25px; font-weight: 600; cursor: pointer; box-shadow: 0 5px 20px rgba(255, 75, 75, 0.4); transition: all 0.3s;">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        @keyframes slideDown {
+          from { transform: translateY(-50px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideIn {
+          from { transform: translateX(-50%) translateY(-20px); opacity: 0; }
+          to { transform: translateX(-50%) translateY(0); opacity: 1; }
+        }
+        @keyframes slideOut {
+          from { transform: translateX(-50%) translateY(0); opacity: 1; }
+          to { transform: translateX(-50%) translateY(-20px); opacity: 0; }
+        }
+        #customModal button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 30px rgba(79, 172, 254, 0.6);
+        }
+      </style>
+
+      <script>
+        var formData = {};
+        
+        function send() {
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var subject = document.getElementById("subject").value;
+          var message = document.getElementById("message").value;
+
+          if (name != '' && email != '' && subject != '' && message != '') {
+            formData = { name, email, subject, message };
+            var modalContent = `
+              <p style="color: #ccc; margin: 10px 0;"><strong style="background: linear-gradient(135deg, #e8e8e8, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Name:</strong> ${name}</p>
+              <p style="color: #ccc; margin: 10px 0;"><strong style="background: linear-gradient(135deg, #e8e8e8, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Email:</strong> ${email}</p>
+              <p style="color: #ccc; margin: 10px 0;"><strong style="background: linear-gradient(135deg, #e8e8e8, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Subject:</strong> ${subject}</p>
+              <p style="color: #ccc; margin: 10px 0;"><strong style="background: linear-gradient(135deg, #e8e8e8, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Message:</strong> ${message}</p>
+            `;
+            document.getElementById('modalContent').innerHTML = modalContent;
+            document.getElementById('customModal').style.display = 'block';
+          } else {
+            showErrorModal();
+          }
+        }
+
+        function showErrorModal() {
+          var toast = document.getElementById('toastNotification');
+          toast.style.display = 'block';
+          toast.style.animation = 'slideIn 0.3s ease';
+          setTimeout(function() {
+            toast.style.animation = 'slideOut 0.3s ease';
+            setTimeout(function() {
+              toast.style.display = 'none';
+            }, 300);
+          }, 3000);
+        }
+
+        function confirmSend() {
+          window.location.href = 'https://wa.me/+919061337743?text=Name: ' + formData.name + ' || Email: ' + formData.email + ' || Subject: ' + formData.subject + ' || Message: ' + formData.message;
+        }
+
+        function closeModal() {
+          document.getElementById('customModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+          var modal = document.getElementById('customModal');
+          if (event.target == modal) {
+            closeModal();
+          }
+        }
+      </script>
 
     </div>
   </section><!-- End Contact Section -->
