@@ -282,9 +282,33 @@
 </head>
 
 <body>
-  <!-- <audio autoplay>
-    <source src="assets/audio/bensound-slowmotion.mp3">
-  </audio> -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/audio/web_music.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    window.addEventListener("wheel", function(e) {
+    e.preventDefault();
+
+    window.scrollBy({
+        top: e.deltaY * 0.3, // Lower value = slower scrolling
+        behavior: "smooth"
+    });
+}, { passive: false });
+    (function() {
+      var music = document.getElementById('bgMusic');
+      music.volume = 0.15;
+      var started = false;
+      function startMusic() {
+        if (!started) {
+          music.play();
+          started = true;
+        }
+      }
+      document.addEventListener('click', startMusic);
+      document.addEventListener('touchstart', startMusic);
+      document.addEventListener('keydown', startMusic);
+    })();
+  </script>
   <!-- ======= Header ======= -->
   <header id="header" class="header-tops">
     <div class="container">
